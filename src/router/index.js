@@ -29,6 +29,26 @@ const routes = [
         component: () => import('../views/ComponentB.vue')
       },
       {
+        path: 'dynamicRouter/:id',
+        component: () => import('../views/DynamicRouter.vue')
+      },
+      // { //綁死ID
+      //   path: 'dynamicRouterByProps/:id',
+      //   component: () => import('../views/DynamicRouter.vue'),
+      //   props: () => ({
+      //     id: 'be2adc7a83c467d7'
+      //   })
+      // },
+      {
+        path: 'dynamicRouterByProps/:id',
+        component: () => import('../views/DynamicRouterByProps.vue'),
+        props: (route) => {
+          return {
+            id: route.params.id
+          }
+        }
+      },
+      {
         path: 'namedview',
         component: () => import('../views/NamedView.vue'),
         children: [
