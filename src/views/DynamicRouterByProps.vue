@@ -1,11 +1,16 @@
 <template>
-  <div></div>
+  <div>{{apiSeed}}</div>
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
+  data () {
+    return {
+      apiSeed: this.$route.params.id
+    }
+  },
   props: ['id'],
   created () {
     // const seed = 'be2adc7a83c467d7'

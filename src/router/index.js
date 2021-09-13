@@ -73,6 +73,16 @@ const routes = [
         component: () => import('../views/RouterNavigation.vue')
       }
     ]
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../views/NotFound.vue')
+  },
+  {
+    path: '/newpage/:pathMatch(.*)*',
+    redirect: {
+      name: 'Home'
+    }
   }
 ]
 
